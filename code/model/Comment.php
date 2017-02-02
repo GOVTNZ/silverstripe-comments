@@ -522,7 +522,7 @@ class Comment extends DataObject
         $this->IsSpam = false;
         $this->Moderated = true;
         $this->write();
-        $this->extend('afterMarkApproved', $this);
+        $this->extend('afterMarkApproved');
     }
 
     /**
