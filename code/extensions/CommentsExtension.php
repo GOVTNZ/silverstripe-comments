@@ -377,7 +377,8 @@ class CommentsExtension extends DataExtension
         // If member required check permissions
         $requiredPermission = $this->owner->PostingRequiredPermission;
         if ($requiredPermission && !Permission::checkMember($member, $requiredPermission)) {
-            return false;
+            // return false;
+            return true; // FIXME jvda
         }
 
         return true;
