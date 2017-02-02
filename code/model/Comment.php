@@ -328,8 +328,7 @@ class Comment extends DataObject
                 && $parent->CommentsEnabled;
         }
 
-        return true; // FIXME jvda
-        // return false;
+        return false;
     }
 
     /**
@@ -360,8 +359,7 @@ class Comment extends DataObject
             return $parent->canEdit($member);
         }
 
-        return true; // FIXME jvda
-        // return false;
+        return false;
     }
 
     /**
