@@ -296,9 +296,9 @@ class CommentingController extends Controller
         if (!$comment) {
             return $this->httpError(404);
         }
-        //if (!$comment->canEdit()) {
-//            return Security::permissionFailure($this, 'You do not have permission to approve this comment');
-//        }
+        if (!$comment->canEdit()) {
+            return Security::permissionFailure($this, 'You do not have permission to approve this comment');
+        }
         if (!$comment->getSecurityToken()->checkRequest($this->request)) {
             return $this->httpError(400);
         }
