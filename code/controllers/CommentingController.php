@@ -267,7 +267,7 @@ class CommentingController extends Controller
             $comment->markSpam();
         }
 
-        // HOTFIX prevent endless loop of redirects if this request has been made without a referrer
+        // HOTFIX prevent endless loop of redirects if this request has been made without being logged on
         $referer = $this->request->getHeader('Referer');
         if (strpos($referer,"/Security/login") !== false) {
             echo "Comment marked as spam";
@@ -297,7 +297,7 @@ class CommentingController extends Controller
             $comment->markApproved();
         }
 
-        // HOTFIX prevent endless loop of redirects if this request has been made without a referrer
+        // HOTFIX prevent endless loop of redirects if this request has been made without being logged on
         $referer = $this->request->getHeader('Referer');
         if (strpos($referer,"/Security/login") !== false) {
             echo "Comment approved";
@@ -327,7 +327,7 @@ class CommentingController extends Controller
             $comment->markApproved();
         }
 
-        // HOTFIX prevent endless loop of redirects if this request has been made without a referrer
+        // HOTFIX prevent endless loop of redirects if this request has been made without being logged on
         $referer = $this->request->getHeader('Referer');
         if (strpos($referer,"/Security/login") !== false) {
             echo "Comment approved";
