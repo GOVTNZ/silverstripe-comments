@@ -268,7 +268,7 @@ class CommentsExtension extends DataExtension
      */
     public function PagedComments()
     {
-        $list = $this->Comments()->sort('"Created" DESC');
+        $list = $this->Comments();
 
         // Add pagination
         $list = new PaginatedList($list, Controller::curr()->getRequest());
